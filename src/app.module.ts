@@ -9,7 +9,7 @@ import { AppService } from './app.service';
   imports: [
     DatabaseModule,
     ConfigModule.forRoot({ isGlobal: true }),
-    // PriceTableModule,
+    PriceTableModule,
   ],
   controllers: [AppController],
   providers: [AppService],
