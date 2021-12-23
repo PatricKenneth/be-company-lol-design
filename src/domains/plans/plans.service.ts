@@ -15,4 +15,8 @@ export class PlansService {
 
     return this.plansRepository.save(plans);
   }
+
+  async get(): Promise<Plans[]> {
+    return this.plansRepository.find();
+  }
 }

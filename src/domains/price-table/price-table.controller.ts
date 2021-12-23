@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CreatePriceTableDTO } from './dtos/create-price-table.dto';
 import { PriceTable } from './price-table.entity';
@@ -12,5 +12,10 @@ export class PriceTableController {
   @Post()
   async create(@Body() create: CreatePriceTableDTO): Promise<PriceTable> {
     return this.priceTableService.create(create);
+  }
+
+  @Get()
+  async get(): Promise<PriceTable[]> {
+    return this.priceTableService.get();
   }
 }

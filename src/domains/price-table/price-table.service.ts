@@ -16,4 +16,8 @@ export class PriceTableService {
 
     return this.priceTableRepository.save(priceTable);
   }
+
+  async get(): Promise<PriceTable[]> {
+    return this.priceTableRepository.find();
+  }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CreatePlansDTO } from './dtos/create-plans.dto';
 import { Plans } from './plans.entity';
@@ -12,5 +12,10 @@ export class PlansController {
   @Post()
   async create(@Body() create: CreatePlansDTO): Promise<Plans> {
     return this.plansService.create(create);
+  }
+
+  @Get()
+  async get(): Promise<Plans[]> {
+    return this.plansService.get();
   }
 }
